@@ -1,0 +1,113 @@
+/* 🔹 Dark theme background and layout */
+#home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 10%;
+  height: 100vh;
+  background: linear-gradient(135deg, #0a0a0a, #212121);
+  color: #e0e0e0;
+  gap: 60px;
+}
+
+/* 🔹 Image styling */
+.home-img  {
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #00bfff;
+  box-shadow: 0 0 25px rgba(0, 191, 255, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.home-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px rgba(0, 191, 255, 0.6);
+}
+
+/* 🔹 Text section */
+.home-content {
+  flex: 1;
+  text-align: left;
+}
+
+.home-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.home-content span {
+  color: #00bfff;
+}
+
+.home-content h2 {
+  font-weight: 400;
+  color: #aaa;
+  margin-bottom: 20px;
+}
+
+.home-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+/* 🔹 Button styling */
+.home-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.home-btn {
+  background-color: #00bfff;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.home-btn:hover {
+  background-color: #008fcc;
+}
+
+/* 🔹 Responsive design */
+@media (max-width: 768px) {
+  #home {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: auto;
+    padding: 60px 5%;
+  }
+
+  .home-img {
+    width: 230px;
+    height: 230px;
+  }
+
+  .home-content {
+    text-align: center;
+  }
+
+  .home-content h1 {
+    font-size: 2rem;
+  }
+
+  .home-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .home-buttons {
+    justify-content: center;
+    text-align: center;
+  }
+}

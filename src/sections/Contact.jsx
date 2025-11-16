@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Contact.css"; // Make sure this path matches your CSS file
+import "./Contact.css"; // your CSS file
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -8,15 +8,41 @@ function Contact() {
     message: ""
   });
 
+  const [status, setStatus] = useState(""); // success/error message
+  const [loading, setLoading] = useState(false);
+
+  const BACKEND_URL = "https://portfolio-backend-xzdm.onrender.com/contact"; // replace with your deployed URL later
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form data submitted:", formData);
-    alert("Thank you for your message!");
-    setFormData({ name: "", email: "", message: "" });
+    setLoading(true);
+    setStatus("");
+
+    try {
+      const res = await fetch(BACKEND_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        setStatus("✅ Message sent successfully!");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setStatus(data.message || "❌ Failed to send message.");
+      }
+    } catch (err) {
+      console.error(err);
+      setStatus("❌ Something went wrong. Please try again.");
+    }
+
+    setLoading(false);
   };
 
   return (
@@ -48,14 +74,18 @@ function Contact() {
           onChange={handleChange}
           required
         />
-        <button type="submit">Send Message</button>
+        <button type="submit" disabled={loading}>
+          {loading ? "Sending..." : "Send Message"}
+        </button>
       </form>
+
+      {status && <p className="status-message">{status}</p>}
 
       <div className="contact-info">
         <p>Email: parthlad153@gmail.com</p>
         <p>Phone: +91-8446723980</p>
         <p>
-          <a href="https://www.linkedin.com/in/parth-lad153" target="_blank">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/parth-lad153" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </p>
       </div>
     </section>

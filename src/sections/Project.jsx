@@ -10,7 +10,7 @@ function Project() {
       description: "My personal portfolio website built with React and CSS. This is where I showcase my projects, skills, and experience.",
       image: "/images/Portfolio.JPG", // Add your image in public/images
       technologies: ["React", "CSS", "JavaScript", "HTML"],
-      liveUrl: "https://yourportfolio.com",
+      liveUrl: "https://parthlad.vercel.app/",
       repoUrl: "https://github.com/Parthlad1/my-portfolio"
     },
     {

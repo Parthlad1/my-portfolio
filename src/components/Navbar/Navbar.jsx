@@ -26,7 +26,7 @@ function Navbar() {
       </ul>
       <div className='ham-menu'>
         <button onClick={toggleMenu}>
-          <GiHamburgerMenu/>
+          <GiHamburgerMenu size={25}/>
         </button>
       </div>
     </nav>

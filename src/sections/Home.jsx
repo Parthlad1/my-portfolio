@@ -3,7 +3,7 @@ import './Home.css'
 function Home() {
   return (
     <section id="home">
-        <img className="home-img" src="/images/Parth.jpg" alt="Profile"/> 
+        <img className="home-img" src="/images/Parth.jpg" alt="Profile" loading="eager"/> 
         {/* https://img.pikbest.com/origin/10/39/14/59WpIkbEsTVxf.jpg!w700wp */}
         <div className="home-content">
             <h1>Hi, I'm <span>Parth Lad</span></h1>

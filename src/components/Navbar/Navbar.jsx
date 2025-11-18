@@ -1,16 +1,21 @@
 import { useState } from 'react';
 import './Navbar.css';
 import { GiHamburgerMenu } from "react-icons/gi";
+import { AiOutlineClose } from "react-icons/ai";
+import { IoClose } from "react-icons/io5";
 
 function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
+  const [isopen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
+    setIsOpen(!isopen);
   }
 
   const closeMenu = () => {
     setShowMenu(false);
+    setIsOpen(false);
   }
 
   return (
@@ -26,7 +31,7 @@ function Navbar() {
       </ul>
       <div className='ham-menu'>
         <button onClick={toggleMenu}>
-          <GiHamburgerMenu size={25}/>
+          {isopen ? <IoClose size={30}/> : <GiHamburgerMenu size={25}/>}
         </button>
       </div>
     </nav>

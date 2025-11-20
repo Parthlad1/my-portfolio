@@ -1,8 +1,8 @@
 /* Dark mode contact section */
 .contact-section {
-    padding-top: 10rem;
+    padding-top: 7rem;
   text-align: center;
-  background-color: #0f0f0f; /* Dark background */
+  background-color: var(--home-bg1); /* Dark background #0f0f0f*/
   color: #e0e0e0;           /* Light text */
   min-height: 100vh;
   font-family: Arial, sans-serif;
@@ -17,7 +17,7 @@
 
 .contact-section p {
   font-size: 1rem;
-  color: #bbbbbb;
+  color: var(--text-paragraph);
   margin-bottom: 2rem;
 }
 
@@ -34,8 +34,8 @@
   padding: 0.75rem;
   border: 1px solid #333;
   border-radius: 8px;
-  background-color: #1e1e1e;
-  color: #e0e0e0;
+  background-color: var(--project-card);
+  color: var(--contact-typing);
   font-size: 1rem;
   transition: all 0.3s ease;
 }
@@ -97,7 +97,7 @@
 /* Responsive Design */
 @media (max-width: 600px) {
   .contact-section {
-    padding: 10rem 2rem;
+    padding: 6rem 2rem;
   }
 
   .contact-section h2 {

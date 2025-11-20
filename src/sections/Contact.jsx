@@ -51,29 +51,12 @@ function Contact() {
       <p>Feel free to reach out for projects or just a friendly hello 👋</p>
 
       <form onSubmit={handleSubmit} className="contact-form">
-        <input
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Your Email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-        <textarea
-          name="message"
-          placeholder="Your Message"
-          value={formData.message}
-          onChange={handleChange}
-          required
-        />
+        <input type="text" name="name" placeholder="Your Name" value={formData.name} 
+        onChange={handleChange} required />
+        <input type="email" name="email" placeholder="Your Email" value={formData.email} 
+        onChange={handleChange} required />
+        <textarea name="message" placeholder="Your Message" value={formData.message} 
+        onChange={handleChange} required />
         <button type="submit" disabled={loading}>
           {loading ? "Sending..." : "Send Message"}
         </button>
@@ -85,7 +68,8 @@ function Contact() {
         <p>Email: parthlad153@gmail.com</p>
         <p>Phone: +91-8446723980</p>
         <p>
-          <a href="https://www.linkedin.com/in/parth-lad153" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/parth-lad153" target="_blank" 
+          rel="noopener noreferrer">LinkedIn</a>
         </p>
       </div>
     </section>

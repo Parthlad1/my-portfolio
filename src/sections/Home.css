@@ -5,8 +5,7 @@
   justify-content: space-between;
   padding: 50px 10%;
   height: 100vh;
-  background: #121212;
-  color: #e0e0e0;
+  background-color: var(--home-bg2);
   gap: 60px;
 }
 
@@ -36,23 +35,23 @@
 .home-content h1 {
   font-size: 2.8rem;
   margin-bottom: 10px;
-  color: #fff;
+  color: var(--text-heading);
 }
 
 .home-content span {
-  color: #00bfff;
+  color: #00BFFF;
 }
 
 .home-content h2 {
   font-weight: 400;
-  color: #aaa;
+  color: var(--text-subheading);
   margin-bottom: 20px;
 }
 
 .home-content p {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #ccc;
+  color: var(--text-paragraph);
   margin-bottom: 30px;
 }
 

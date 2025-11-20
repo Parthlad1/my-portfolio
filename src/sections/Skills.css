@@ -1,5 +1,5 @@
 .skills-section {
-  background-color: rgb(20, 20, 20);
+  background-color: var(--home-bg2);
   color: #ffffff;
   padding: 100px 20px;
   text-align: center;
@@ -17,7 +17,7 @@
 
 .category-title {
   font-size: 2rem;
-  color: white;
+  color: var(--text-heading);
   margin-bottom: 20px;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .skill-card {
-  background-color: #1a1f2e;
+  /* background-color: var(--skill-card); */
   border: 2px solid #4da6ff;
   border-radius: 12px;
   padding: 20px;

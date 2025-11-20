@@ -11,17 +11,24 @@ import Project from './sections/Project.jsx'
 import Contact from './sections/Contact.jsx'
 
 function App() {
+    // Load saved theme OR default to "light"
+  const [theme, setTheme] = useState("dark");
+
+  // Toggle ONLY Home section theme
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
 
   return (
-    <>
-      <Navbar />
+    <div className={theme === "light" ? "app" : "app dark"}>
+      <Navbar toggleTheme={toggleTheme} theme={theme}/>
       <Home />
       <About />
       <Skills />
       <Experience />
       <Project />
       <Contact />
-    </>
+    </div>
   )
 }
 

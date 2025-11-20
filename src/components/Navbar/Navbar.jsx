@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import './Navbar.css';
 import { GiHamburgerMenu } from "react-icons/gi";
-import { AiOutlineClose } from "react-icons/ai";
 import { IoClose } from "react-icons/io5";
+import { FaSun, FaMoon } from "react-icons/fa";
 
-function Navbar() {
+function Navbar({ toggleTheme, theme }) {
   const [showMenu, setShowMenu] = useState(false);
   const [isopen, setIsOpen] = useState(false);
 
@@ -28,10 +28,12 @@ function Navbar() {
         <li><a href="#experience" onClick={closeMenu}>Experience</a></li>
         <li><a href="#projects" onClick={closeMenu}>Projects</a></li>
         <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
+        <li><a href="" onClick={(e)=>{e.preventDefault(); toggleTheme(); closeMenu()}}>{theme === "light" ? <FaMoon size={18}/> : <FaSun size={18}/>}</a></li>
       </ul>
       <div className='ham-menu'>
         <button onClick={toggleMenu}>
-          {isopen ? <IoClose size={30}/> : <GiHamburgerMenu size={25}/>}
+          {isopen ? <IoClose size={30} color={theme === "light" ? "#151515" : "#E0E0E0"}/>
+          : <GiHamburgerMenu size={25} color={theme === "light" ? "#151515" : "#E0E0E0"}/>}
         </button>
       </div>
     </nav>

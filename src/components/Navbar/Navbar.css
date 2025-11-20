@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #0a0a0a;
+  background-color: var(--navbar);
   color: #fff;
   padding: 1rem 2rem;
   position: sticky;
@@ -16,6 +16,7 @@
   font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: 1px;
+  color: var(--text-heading);
 }
 
 /* Navigation links */
@@ -26,7 +27,7 @@
 }
 
 .nav-links li a {
-  color: #fff;
+  color: var(--text-heading);
   text-decoration: none;
   transition: color 0.3s;
 }
@@ -62,7 +63,7 @@ button{
     position: absolute;
     top: 75px;
     left: 0;
-    background-color: #151515 ;
+    background-color: var(--home-bg2); ;
     padding: 1rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;

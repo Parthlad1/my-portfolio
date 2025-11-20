@@ -2,3 +2,56 @@
   margin: 0;
   padding: 0;
 }
+
+/* 🌞 LIGHT MODE VARIABLES */
+:root {
+  --navbar: #ffffff;
+  --home-bg1: #F5F5F5;
+  --home-bg2: #EAEAEA;
+  --project-card: #F5F5F5;
+  --contact-typing:#1E1E1E;
+  --navbar-btn:black;
+
+  --text-main: #000000;
+  --text-heading: #111111;
+  --text-subheading: #444444;
+  --text-paragraph: #555555;
+}
+
+/* 🌙 DARK MODE VARIABLES */
+.app.dark {
+  --navbar: #0a0a0a;
+  --home-bg1: #0f0f0f;
+  --home-bg2: #121212;
+  --project-card: #1e1e1e;
+  --contact-typing:#e0e0e0;
+  --navbar-btn:transparent;
+
+
+  --text-main: #ffffff;
+  --text-heading: #ffffff;
+  --text-subheading: #aaaaaa;
+  --text-paragraph: #cccccc;
+}
+
+.navbar{
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+#home {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+.about{
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+.skills-section{
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+.section{
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+.projects-section{
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+.contact-section{
+  transition: background-color 0.5s ease, color 0.5s ease;
+}

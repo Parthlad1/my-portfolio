@@ -4,6 +4,7 @@
   background: #0f0f0f;
   color: #e5e5e5;
   position: relative;
+  background-color: var(--home-bg1);
 }
 
 /* TITLE */
@@ -67,7 +68,7 @@
   margin: 0;
   font-size: 1.3rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-heading);
 }
 
 .card h4 {
@@ -79,13 +80,13 @@
 .card span {
   display: block;
   margin-bottom: 12px;
-  color: #bbb;
+  color: var(--text-paragraph);
   font-size: 0.9rem;
 }
 
 .card ul li {
   margin-bottom: 8px;
-  color: #ddd;
+  color: var(--text-subheading);
   line-height: 1.5;
 }
 

@@ -1,22 +1,15 @@
-:root {
-  --primary-blue: #00bcd4;
-  --bg-dark: #121212;
-  --card-dark: #1e1e1e;
-  --text-light: #e0e0e0;
-  --text-muted: #aaa;
-}
 
 .projects-section {
+  background-color: var(--home-bg2);
+  color: #e0e0e0;
   padding: 100px 20px;
-  background-color: var(--bg-dark);
   text-align: center;
-  color: var(--text-light);
 }
 
 .projects-section h2 {
   font-size: 2rem;
   margin-bottom: 40px;
-  color: var(--primary-blue);
+  color: #00bcd4;
 }
 
 .projects-grid {
@@ -28,7 +21,7 @@
 }
 
 .project-card {
-  background-color: var(--card-dark);
+  background-color: var(--project-card);
   border-radius: 8px;
   padding: 16px;
   transition: transform 0.2s, box-shadow 0.2s;
@@ -50,23 +43,23 @@
 .project-title {
   font-size: 1.25rem;
   margin: 10px 0 5px;
-  color: var(--primary-blue);
+  color: #00bcd4;
 }
 
 .project-description {
-  color: var(--text-light);
+  color: var(--text-heading);
   font-size: 0.95rem;
 }
 
 .project-tech {
   font-size: 0.85rem;
-  color: var(--text-muted);
+  color: var(--text-subheading);
   margin: 5px 0;
 }
 
 .project-links a {
   margin-right: 10px;
-  color: var(--primary-blue);
+  color: #00bcd4;
   text-decoration: none;
   font-weight: 500;
 }

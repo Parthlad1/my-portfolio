@@ -28,7 +28,8 @@ function Navbar({ toggleTheme, theme }) {
         <li><a href="#experience" onClick={closeMenu}>Experience</a></li>
         <li><a href="#projects" onClick={closeMenu}>Projects</a></li>
         <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
-        <li><a href="" onClick={(e)=>{e.preventDefault(); toggleTheme(); closeMenu()}}>{theme === "light" ? <FaMoon size={18}/> : <FaSun size={18}/>}</a></li>
+        <li><a href="" onClick={(e)=>{e.preventDefault(); toggleTheme(); closeMenu()}}>
+          {theme === "light" ? <FaMoon size={18}/> : <FaSun size={18}/>}</a></li>
       </ul>
       <div className='ham-menu'>
         <button onClick={toggleMenu}>

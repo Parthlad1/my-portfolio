@@ -49,7 +49,7 @@ function Navbar({ toggleTheme, theme }) {
         <li><a href="#projects" onClick={closeMenu}>Projects</a></li>
         <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
         <li>
-          <button className={`theme-toggle ${theme}`} onClick={()=>{toggleTheme(); closeMenu()}}>
+          <button className={`theme-toggle ${theme}`} onClick={toggleTheme}>
             <span className="toggle-circle">{theme === "light" ? 
               <FaMoon size={12} color='black'/> : <FaSun size={12}/>}</span>
           </button>

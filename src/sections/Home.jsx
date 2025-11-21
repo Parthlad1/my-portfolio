@@ -9,7 +9,7 @@ function Home() {
             <h1>Hi, I'm <span>Parth Lad</span></h1>
             <h2>Full Stack Developer | Automation Enthusiast | Tech Explorer</h2>
             <p>
-            I create scalable, data-driven, and user-friendly web applications using React.js, Java, Python, and SQL.
+            I create scalable, data-driven, and user-friendly web applications using React.js, Node.js, and Express.js.
             Passionate about blending frontend creativity with backend precision, I love building tools that
             simplify work and make technology more intuitive.
             </p>

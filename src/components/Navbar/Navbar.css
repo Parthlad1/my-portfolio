@@ -120,6 +120,7 @@ button{
     /* Start off-screen */
     transform: translateX(100%);
     opacity: 0;
+    transition: background-color 0.5s ease, color 0.5s ease;
   }
 
   /* OPEN animation */

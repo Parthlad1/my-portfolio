@@ -6,7 +6,7 @@ function About() {
       <div className="about-container">
         <h2 className="about-title"> About Me</h2>
         <p className="about-text">
-          I’m <strong>Parth Lad</strong>, a <span className="highlight">Full Stack Developer</span> with hands-on experience in <strong>React.js, ASP.NET (C#), Java, Python, and AWS S3</strong>. As a Junior Software Developer, I’ve built responsive web applications, integrated APIs, and managed cloud-based workflows, delivering scalable and user-friendly solutions.
+          I’m <strong>Parth Lad</strong>, a <span className="highlight">Full Stack Developer</span> with hands-on experience in <strong>React.js, Node.js, Express.js, ASP.NET (C#), and AWS S3</strong> I’ve built responsive web applications, integrated APIs, and managed cloud-based workflows, delivering scalable and user-friendly solutions.
         </p>
 
         <p className="about-text">
@@ -19,11 +19,6 @@ function About() {
 
         <p className="about-text">
           My foundation spans <strong>frontend and backend development, cloud management, automation,</strong> and <strong>data analysis</strong>, enabling me to approach problems with both technical precision and creative solutions. I’m eager to contribute to projects that deliver meaningful, data-driven, and impactful solutions.
-        </p>
-
-        <h3 className="about-subtitle"> Core Skills</h3>
-        <p className="about-text">
-          React.js • ASP.NET (C#) • Java • Python • HTML • CSS • JavaScript • SQL • AWS S3 • RPA (AutomationEdge) • Data Analysis • Selenium • Git & GitHub
         </p>
 
         <h3 className="about-subtitle"> Open To</h3>

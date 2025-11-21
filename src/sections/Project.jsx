@@ -1,6 +1,5 @@
-// src/components/Projects.jsx
-import React from "react";
-import "./Project.css"; // We'll include CSS below
+import React, { useEffect } from "react";
+import "./Project.css";
 
 function Project() {
   const projects = [
@@ -8,8 +7,8 @@ function Project() {
       id: 1,
       title: "Portfolio Website",
       description: "My personal portfolio website built with React and CSS. This is where I showcase my projects, skills, and experience.",
-      image: "/images/Portfolio.JPG", // Add your image in public/images
-      technologies: ["React", "CSS", "JavaScript", "HTML"],
+      image: "/images/Portfolio.JPG",
+      technologies: ["HTML", "CSS", "JavaScript", "React", "Node.js", "Express.js"],
       liveUrl: "https://parthlad.vercel.app/",
       repoUrl: "https://github.com/Parthlad1/my-portfolio"
     },
@@ -17,12 +16,30 @@ function Project() {
       id: 2,
       title: "Netflix Data Analysis",
       description: "A data analysis project exploring Netflix viewing trends and patterns using Python and data visualization tools.",
-      image: "/images/Netflix Dashboard.png", // Add your image or graph
+      image: "/images/Netflix Dashboard.png",
       technologies: ["Python", "Pandas", "Numpy", "Matplotlib", "Seaborn", "Tableau"],
       liveUrl: "https://lnkd.in/esSqr6Ya",
       repoUrl: "https://github.com/Parthlad1/netflix-data-analysis"
     }
   ];
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    const cards = document.querySelectorAll(".project-card");
+    cards.forEach((card) => observer.observe(card));
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section id="projects" className="projects-section">
@@ -47,6 +64,6 @@ function Project() {
       </div>
     </section>
   );
-};
+}
 
 export default Project;

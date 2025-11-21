@@ -1,10 +1,26 @@
-import { FaReact, FaJava, FaNodeJs, FaGitAlt, FaHtml5, FaCss3Alt, FaDatabase,FaPython, FaAws } from "react-icons/fa";
+import { FaReact, FaJava, FaNodeJs, FaGitAlt, FaHtml5, FaCss3Alt, FaDatabase, FaPython, FaAws } from "react-icons/fa";
 import { SiExpress, SiMysql, SiMongodb, SiJavascript, SiPostman } from "react-icons/si";
 import { BiLogoPostgresql } from "react-icons/bi";
+import { motion } from "framer-motion";
 import './Skills.css';
 
 function Skills() {
-const frontendSkills = [
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.15 }
+    })
+  };
+
+  const frontendSkills = [
     { name: "HTML5", icon: <FaHtml5 />, color: "#E34F26" },
     { name: "CSS3", icon: <FaCss3Alt />, color: "#1572B6" },
     { name: "JavaScript", icon: <SiJavascript />, color: "#F7DF1E" },
@@ -31,39 +47,98 @@ const frontendSkills = [
   ];
 
   const renderSkills = (skillsArray) => (
-    <div className="skills-container">
+    <motion.div 
+      className="skills-container"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+    >
       {skillsArray.map((skill, index) => (
-        <div key={index} className="skill-card">
-          <div className="skill-icon" style={{color : skill.color}}>{skill.icon}</div>
+        <motion.div
+          key={index}
+          className="skill-card"
+          variants={cardVariants}
+          custom={index}
+        >
+          <div className="skill-icon" style={{ color: skill.color }}>{skill.icon}</div>
           <h3 className="skill-name">{skill.name}</h3>
-        </div>
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 
   return (
     <section className="skills-section" id="skills">
-      <h2 className="section-title">Skills</h2>
 
+      {/* Section Title */}
+      <motion.h2 
+        className="section-title"
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        transition={{ duration: 0.4 }}
+        viewport={{ once: true }}
+      >
+        Skills
+      </motion.h2>
+
+      {/* Categories */}
       <div className="skills-category">
-        <h3 className="category-title">Frontend</h3>
+        <motion.h3 
+          className="category-title"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          transition={{ duration: 0.4 }}
+          viewport={{ once: true }}
+        >
+          Frontend
+        </motion.h3>
         {renderSkills(frontendSkills)}
       </div>
 
       <div className="skills-category">
-        <h3 className="category-title">Backend</h3>
+        <motion.h3 
+          className="category-title"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          transition={{ duration: 0.4 }}
+          viewport={{ once: true }}
+        >
+          Backend
+        </motion.h3>
         {renderSkills(backendSkills)}
       </div>
 
       <div className="skills-category">
-        <h3 className="category-title">Databases</h3>
+        <motion.h3 
+          className="category-title"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          transition={{ duration: 0.4 }}
+          viewport={{ once: true }}
+        >
+          Databases
+        </motion.h3>
         {renderSkills(databaseSkills)}
       </div>
 
       <div className="skills-category">
-        <h3 className="category-title">Tools / Cloud</h3>
+        <motion.h3 
+          className="category-title"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          transition={{ duration: 0.4 }}
+          viewport={{ once: true }}
+        >
+          Tools / Cloud
+        </motion.h3>
         {renderSkills(toolsSkills)}
       </div>
+
     </section>
   );
 }

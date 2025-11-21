@@ -49,6 +49,52 @@ button{
   color: #fff;
   cursor: pointer;
 }
+.nav-link-mobile {
+  display: none;
+}
+
+/* Toggle switch container */
+.theme-toggle {
+  width: 40px;
+  height: 22px;
+  border-radius: 30px;
+  padding: 0;
+  position: relative;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Circle */
+.toggle-circle {
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s ease;
+  display: flex;            /* ⭐ enables centering */
+  align-items: center;      /* ⭐ vertical center */
+  justify-content: center; 
+}
+
+/* Light mode style */
+.theme-toggle.light {
+  background: #cfcfcf;
+}
+
+/* Dark mode style */
+.theme-toggle.dark {
+  background: #00bcd4;
+}
+
+/* Move circle in dark mode */
+.theme-toggle.dark .toggle-circle {
+  transform: translateX(18px);
+}
+
 
 /* Responsive design */
 @media (max-width: 768px) {
@@ -71,8 +117,19 @@ button{
     width: 50%;
     height: 100vh;
     list-style: none; 
-    /* 🔥 Animation when menu appears */
-    animation: slideIn 0.9s ease forwards;
+    /* Start off-screen */
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  /* OPEN animation */
+  .nav-link-mobile.open {
+    animation: slideIn 0.6s ease forwards;
+  }
+
+  /* CLOSE animation */
+  .nav-link-mobile.close {
+    animation: slideOut 0.6s ease forwards;
   }
 
   .nav-link-mobile li {
@@ -100,4 +157,15 @@ button{
       opacity: 1;
     }
   }
+    @keyframes slideOut {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
 }
+

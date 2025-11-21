@@ -10,7 +10,7 @@ function Home() {
         src="/images/Profile.jpg"
         alt="Profile"
         loading="eager"
-        initial={{ opacity: 0, x: -100 }}
+        initial={{ opacity: 0, x: -10 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
       />

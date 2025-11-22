@@ -47,25 +47,18 @@ function Skills() {
   ];
 
   const renderSkills = (skillsArray) => (
-    <motion.div 
-      className="skills-container"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-    >
-      {skillsArray.map((skill, index) => (
-        <motion.div
-          key={index}
-          className="skill-card"
-          variants={cardVariants}
-          custom={index}
-        >
-          <div className="skill-icon" style={{ color: skill.color }}>{skill.icon}</div>
+  <motion.div className="skills-container" initial="hidden" whileInView="visible"
+    viewport={{ once: true, amount: 0.2 }}>
+    {skillsArray.map((skill, index) => (
+      <motion.div key={index} className="skill-wrapper" variants={cardVariants} custom={index}>
+        <div className="skill-card">
+          <div className="skill-icon" style={{ color: skill.color }}> {skill.icon}</div>
           <h3 className="skill-name">{skill.name}</h3>
-        </motion.div>
-      ))}
-    </motion.div>
-  );
+        </div>
+      </motion.div>
+    ))}
+  </motion.div>
+);
 
   return (
     <section className="skills-section" id="skills">

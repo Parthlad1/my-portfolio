@@ -20,7 +20,7 @@ function Project() {
       technologies: ["Python", "Pandas", "Numpy", "Matplotlib", "Seaborn", "Tableau"],
       liveUrl: "https://lnkd.in/esSqr6Ya",
       repoUrl: "https://github.com/Parthlad1/netflix-data-analysis"
-    }
+    },
   ];
 
   useEffect(() => {

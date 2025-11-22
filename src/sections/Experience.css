@@ -20,10 +20,10 @@
 .section::before {
   content: "";
   position: absolute;
-  left: 40px;               /* small gap from left edge */
-  top: 120px;
+  left: 70px;
+  top: 200px;
   width: 3px;
-  height: calc(100% - 160px);
+  height: calc(100% - 330px);
   background: #3a3a3a;
   border-radius: 2px;
 }
@@ -83,6 +83,9 @@
   color: var(--text-paragraph);
   font-size: 0.9rem;
 }
+.card ul{
+  padding-left: 18px;
+}
 
 .card ul li {
   margin-bottom: 8px;
@@ -100,25 +103,14 @@
 
   /* card moves slightly but stays clean */
   .card {
-    margin-left: 70px;
+    margin-left: 40px;
     padding: 18px 20px;
   }
 
   /* dot adjusts */
   .card::before {
-    left: -32px;
+    left: -43px;
     width: 14px;
     height: 14px;
   }
 }
-/* Placeholder to attach animation but keep original dot styling */
-.dot-animator {
-  position: absolute;
-  left: -60px;
-  top: 20px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: none;
-}
-

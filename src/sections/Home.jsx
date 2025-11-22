@@ -5,15 +5,10 @@ function Home() {
   return (
     <section id="home" className="home-section">
       {/* Profile Image */}
-      <motion.img
-        className="home-img"
-        src="/images/Profile.jpg"
-        alt="Profile"
-        loading="eager"
-        initial={{ opacity: 0, x: -10 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1 }}
-      />
+      <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} 
+      transition={{ duration: 1 }}>
+        <img className="home-img" src="/images/Profile.jpg" alt="Profile" loading="eager"/>
+      </motion.div>
 
       <div className="home-content">
         {/* Heading */}

@@ -131,8 +131,9 @@ function Contact() {
         transition={{ duration: 0.7 }}
         viewport={{ once: true }}
       >
-        <p>Email: parthlad153@gmail.com</p>
-        <p>Phone: +91-8446723980</p>
+        <p>Email: <a href="mailto:parthlad153@gmail.com">parthlad153@gmail.com</a></p>
+        <p>Phone: <a href="tel:+918446723980">+91-8446723980</a></p>
+
         <p>
           <a
             href="https://www.linkedin.com/in/parth-lad153"

@@ -23,10 +23,15 @@
   left: 70px;
   top: 200px;
   width: 3px;
-  height: calc(100% - 330px);
-  background: #3a3a3a;
+  height: var(--line-height, 0); /* dynamically updated */;
+  background: black;
   border-radius: 2px;
+  transition: none;
 }
+.section.animate-line::before {
+  height: calc(100% - 330px);   /* 🔥 your original height */
+}
+
 
 /* CARD */
 .card {
@@ -98,7 +103,7 @@
 
   /* timeline moves slightly left */
   .section::before {
-    left: 25px;
+    left: 26px;
   }
 
   /* card moves slightly but stays clean */

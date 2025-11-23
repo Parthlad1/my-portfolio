@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+
 import './Experience.css';
 
 function Experience() {
+  const sectionRef = useRef(null);
     const experienceData = [
   {
     title: "Jr. Associate Technology",
@@ -29,10 +31,51 @@ function Experience() {
     ]
   }
 ];
+// 🔥 Use useEffect to run observer after component mounts
+useEffect(() => {
+  const section = sectionRef.current;
+
+  const handleScroll = () => {
+    if (!section) return;
+
+    const rect = section.getBoundingClientRect();
+    const viewportHeight = window.innerHeight;
+
+    // ⭐ Start when section reaches the top of the viewport
+    const start = 0;
+
+    // ⭐ End when the entire section scrolls out of view
+    const end = -rect.height;
+
+    // ⭐ Calculate progress (0 → 1)
+    let progress = (start - rect.top) / (start - end);
+
+    // Clamp between 0–1
+    progress = Math.min(Math.max(progress, 0), 1);
+
+    // ⭐ Add speed control (optional)
+    const speed = 1.3; 
+    const adjustedProgress = Math.min(progress * speed, 1);
+
+    const maxHeight = section.offsetHeight - 330;
+    const currentHeight = maxHeight * adjustedProgress;
+
+    section.style.setProperty("--line-height", `${currentHeight}px`);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  handleScroll();
+
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
+
+
+
 
 return (
 
-    <section id="experience" className="section">
+    <section id="experience" className="section" ref={sectionRef}>
         <h2>Work Experience</h2>
 
             {experienceData.map((exp, index) => (

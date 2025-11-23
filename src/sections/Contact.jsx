@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "./Contact.css";
+import { FaEnvelope, FaLinkedin } from "react-icons/fa";
+import { FaPhone } from "react-icons/fa6";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -124,25 +126,12 @@ function Contact() {
       )}
 
       {/* Contact Details Animation */}
-      <motion.div
-        className="contact-info"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        viewport={{ once: true }}
-      >
-        <p>Email: <a href="mailto:parthlad153@gmail.com">parthlad153@gmail.com</a></p>
-        <p>Phone: <a href="tel:+918446723980">+91-8446723980</a></p>
-
-        <p>
-          <a
-            href="https://www.linkedin.com/in/parth-lad153"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LinkedIn
-          </a>
-        </p>
+      <motion.div className="contact-info" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }} viewport={{ once: true }}>
+        <a href="mailto:parthlad153@gmail.com" className="icon-email"><FaEnvelope /></a>
+        <a href="tel:+918446723980" className="icon-phone"><FaPhone /></a>
+        <a href="https://www.linkedin.com/in/parth-lad153" target="_blank" rel="noopener noreferrer" 
+        className="icon-linkedin"> <FaLinkedin /> </a>
       </motion.div>
     </section>
   );

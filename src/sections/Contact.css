@@ -12,7 +12,7 @@
 .contact-section h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #00bcd4;
+  color: #00bfff;
   font-family: 'Times New Roman', Times, serif;
 }
 
@@ -80,7 +80,7 @@
 
 /* Contact info links */
 .contact-info {
-  margin-top: 2rem;
+  margin-top: 3rem;
   display: flex;
   justify-content: center; /* Center the icons */
   gap: 2rem;               /* Space between icons */
@@ -109,19 +109,19 @@
 /* Example: red glow for Gmail icon */
 .icon-email {
   color: #C5221F; /* Gmail color */
-  filter: drop-shadow(0 0 10px #C5221Fc3);
+  filter: drop-shadow(0 0 10px #c5221f63);
 }
 
 /* Green glow for Phone */
 .icon-phone {
   color: #25D366;
-  filter: drop-shadow(0 0 10px #25d365c3);
+  filter: drop-shadow(0 0 10px #25d36563);
 }
 
 /* Blue glow for LinkedIn */
 .icon-linkedin {
   color: #0A66C2;
-   filter: drop-shadow(0 0 10px #0a66c2c3);
+   filter: drop-shadow(0 0 10px #0a66c263);
 }
 
 .icon-email, .icon-phone, .icon-linkedin {

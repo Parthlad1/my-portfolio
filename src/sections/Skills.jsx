@@ -1,4 +1,4 @@
-import { FaReact, FaJava, FaNodeJs, FaGitAlt, FaHtml5, FaCss3Alt, FaDatabase, FaPython, FaAws } from "react-icons/fa";
+import { FaReact, FaJava, FaNodeJs, FaGitAlt, FaHtml5, FaCss3Alt, FaPython, FaAws } from "react-icons/fa";
 import { SiExpress, SiMysql, SiMongodb, SiJavascript, SiPostman } from "react-icons/si";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { motion } from "framer-motion";
@@ -46,90 +46,65 @@ function Skills() {
     { name: "Postman", icon: <SiPostman />, color: "#FF6C37" },
   ];
 
-  const renderSkills = (skillsArray) => (
+const renderSkills = (skillsArray, trackClass) => (
   <motion.div className="skills-container" initial="hidden" whileInView="visible"
     viewport={{ once: true, amount: 0.2 }}>
-    {skillsArray.map((skill, index) => (
-      <motion.div key={index} className="skill-wrapper" variants={cardVariants} custom={index}>
-        <div className="skill-card">
-          <div className="skill-icon" style={{ color: skill.color }}> {skill.icon}</div>
-          <h3 className="skill-name">{skill.name}</h3>
-        </div>
-      </motion.div>
-    ))}
+    
+    <div className={`skills-track ${trackClass}`}>
+      {[...skillsArray, ...skillsArray,...skillsArray,...skillsArray].map((skill, index) => (
+        <motion.div key={index} className="skill-wrapper" variants={cardVariants} custom={index}>
+          <div className="skill-card">
+            <div className="skill-icon" style={{ color: skill.color }}> {skill.icon}</div>
+            <h3 className="skill-name">{skill.name}</h3>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+
   </motion.div>
 );
+
 
   return (
     <section className="skills-section" id="skills">
 
       {/* Section Title */}
-      <motion.h2 
-        className="section-title"
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="visible"
-        transition={{ duration: 0.4 }}
-        viewport={{ once: true }}
-      >
+      <motion.h2 className="section-title" variants={fadeUp} initial="hidden" whileInView="visible"
+        transition={{ duration: 0.4 }} viewport={{ once: true }}>
         Skills
       </motion.h2>
 
       {/* Categories */}
       <div className="skills-category">
-        <motion.h3 
-          className="category-title"
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          transition={{ duration: 0.4 }}
-          viewport={{ once: true }}
-        >
+        <motion.h3 className="category-title" variants={fadeUp} initial="hidden" whileInView="visible"
+          transition={{ duration: 0.4 }} viewport={{ once: true }}>
           Frontend
         </motion.h3>
-        {renderSkills(frontendSkills)}
+        {renderSkills(frontendSkills, "track-frontend")}
       </div>
 
       <div className="skills-category">
-        <motion.h3 
-          className="category-title"
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          transition={{ duration: 0.4 }}
-          viewport={{ once: true }}
-        >
+        <motion.h3 className="category-title" variants={fadeUp} initial="hidden" whileInView="visible"
+          transition={{ duration: 0.4 }} viewport={{ once: true }}>
           Backend
         </motion.h3>
-        {renderSkills(backendSkills)}
+        {renderSkills(backendSkills, "track-backend")}
       </div>
 
       <div className="skills-category">
-        <motion.h3 
-          className="category-title"
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          transition={{ duration: 0.4 }}
-          viewport={{ once: true }}
-        >
+        <motion.h3 className="category-title" variants={fadeUp} initial="hidden" whileInView="visible"
+          transition={{ duration: 0.4 }} viewport={{ once: true }}>
           Databases
         </motion.h3>
-        {renderSkills(databaseSkills)}
+        {renderSkills(databaseSkills, "track-database")}
       </div>
 
       <div className="skills-category">
-        <motion.h3 
-          className="category-title"
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          transition={{ duration: 0.4 }}
-          viewport={{ once: true }}
-        >
+        <motion.h3 className="category-title" variants={fadeUp} initial="hidden" whileInView="visible"
+          transition={{ duration: 0.4 }} viewport={{ once: true }}>
           Tools / Cloud
         </motion.h3>
-        {renderSkills(toolsSkills)}
+        {renderSkills(toolsSkills, "track-tools")}
       </div>
 
     </section>

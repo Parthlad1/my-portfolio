@@ -30,27 +30,24 @@
 }
 
 .skill-card {
-  /* background-color: var(--skill-card); */
   border: 2px solid #4da6ff;
   border-radius: 12px;
   padding: 20px;
   width: 150px;
-  transition: transform 0.3s, box-shadow 0.3s;
-  margin: 30px;
+  margin: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s;
+    border: 2px solid #4da6ff;
+  box-shadow: 0 0 10px rgba(77, 166, 255, 0.4),
+              0 0 20px rgba(77, 166, 255, 0.2);
 }
 
 .skill-wrapper {
-  opacity: 0;
-  animation: popUp 0.7s ease-out forwards;
+  opacity: 1;
 }
 .skill-wrapper:hover .skill-card {
-  transform: translateY(-5px);
-  box-shadow: 0 0 15px #4da6ff;
+  transform: rotateY(20deg) rotateX(10deg);
+  box-shadow: 0 0 20px #4da6ff;
 }
-/* .skill-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 15px #4da6ff;
-} */
 
 .skill-icon {
   font-size: 2.5rem;
@@ -95,3 +92,63 @@
 .skill-wrapper:nth-child(8) { animation-delay: 0.8s; }
 .skill-wrapper:nth-child(9) { animation-delay: 0.9s; }
 .skill-wrapper:nth-child(10) { animation-delay: 1s; }
+/* Wrapper to hide overflow */
+.skills-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+/* Track – this will slide */
+.skills-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  /* animation: slideRight 12s linear infinite; */
+}
+
+/* Cards stay the same */
+
+
+/* Hover effects still work */
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px #4da6ff;
+}
+
+/* Keyframes for movement */
+@keyframes slideRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-25%);
+  }
+}
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(25%);
+  }
+}
+.track-frontend {
+  animation: slideRight 8s linear infinite;
+  
+}
+.track-backend {
+  animation: slideLeft 8s linear infinite;
+  
+}
+.track-database {
+  animation: slideRight 5s linear infinite;
+  
+}
+.track-tools {
+  animation: slideLeft 5s linear infinite;
+  
+}
+
+
+

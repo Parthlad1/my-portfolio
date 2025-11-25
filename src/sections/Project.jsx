@@ -6,7 +6,7 @@ function Project() {
     {
       id: 1,
       title: "Portfolio Website",
-      description: "My personal portfolio website built with React and CSS. This is where I showcase my projects, skills, and experience.",
+      description: "A responsive personal portfolio built with React on the frontend and Node.js + Express.js on the backend. Showcases my skills, projects, and experience with a clean design and smooth animations.",
       image: "/images/Portfolio.JPG",
       technologies: ["HTML", "CSS", "JavaScript", "React", "Node.js", "Express.js"],
       liveUrl: "https://parthlad.vercel.app/",

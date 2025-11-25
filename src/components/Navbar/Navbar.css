@@ -110,7 +110,6 @@ button{
     position: fixed ;
     top: 62px;
     right: 0;
-    /* left: 50%; */
     background-color: var(--home-bg2); ;
     padding: 1rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -135,7 +134,6 @@ button{
 
   .nav-link-mobile li {
     margin: 1rem 0;
-
   }
 
   .nav-link-mobile li a {

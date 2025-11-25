@@ -128,9 +128,6 @@
   animation: pulse-glow 2s infinite alternate;
 }
 
-
-
-/* --- OPTIONAL SCROLL ANIMATIONS --- */
 /* Fade-up animation utilities */
 .fade-up {
   opacity: 0;

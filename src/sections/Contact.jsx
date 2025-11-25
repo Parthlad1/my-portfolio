@@ -51,76 +51,37 @@ function Contact() {
   return (
     <section id="contact" className="contact-section">
       {/* Title Animation */}
-      <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
+      <motion.h2 initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }} viewport={{ once: true }}>
         Contact Me
       </motion.h2>
 
-      <motion.p
-        className="contact-subtitle"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.2, duration: 0.6 }}
-        viewport={{ once: true }}
-      >
+      <motion.p className="contact-subtitle" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.2, duration: 0.6 }} viewport={{ once: true }}>
         Feel free to reach out for projects or just a friendly hello 👋
       </motion.p>
 
       {/* Form Animation */}
-      <motion.form
-        onSubmit={handleSubmit}
-        className="contact-form"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        viewport={{ once: true }}
-      >
-        <input
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
+      <motion.form onSubmit={handleSubmit} className="contact-form" initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} viewport={{ once: true }}>
 
-        <input
-          type="email"
-          name="email"
-          placeholder="Your Email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
+        <input type="text" name="name" placeholder="Your Name" value={formData.name}
+          onChange={handleChange} required />
 
-        <textarea
-          name="message"
-          placeholder="Your Message"
-          value={formData.message}
-          onChange={handleChange}
-          required
-        />
+        <input type="email" name="email" placeholder="Your Email" value={formData.email}
+          onChange={handleChange} required />
 
-        <motion.button
-          type="submit"
-          disabled={loading}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
+        <textarea name="message" placeholder="Your Message" value={formData.message}
+          onChange={handleChange} required />
+
+        <motion.button type="submit" disabled={loading} whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}>
           {loading ? "Sending..." : "Send Message"}
         </motion.button>
       </motion.form>
 
       {status && (
-        <motion.p
-          className="status-message"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-        >
+        <motion.p className="status-message" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
           {status}
         </motion.p>
       )}

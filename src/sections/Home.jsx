@@ -40,7 +40,7 @@ function Home() {
             View My Work
           </motion.a>
 
-          <motion.a href="/ParthLad_Resume.pdf" target="_blank" rel="noopener noreferrer"
+          <motion.a href="/Parth_Lad_Java_Developer_Resume.pdf" target="_blank" rel="noopener noreferrer"
             className="home-btn" whileHover={{ scale: 1.1, backgroundColor: "#008fcc" }}>
             View Resume
           </motion.a>

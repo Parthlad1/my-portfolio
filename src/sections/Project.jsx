@@ -5,21 +5,21 @@ function Project() {
   const projects = [
     {
       id: 1,
-      title: "Portfolio Website",
-      description: "A responsive personal portfolio built with React on the frontend and Node.js + Express.js on the backend. Showcases my skills, projects, and experience with a clean design and smooth animations.",
-      image: "/images/Portfolio.JPG",
-      technologies: ["HTML", "CSS", "JavaScript", "React", "Node.js", "Express.js"],
-      liveUrl: "https://parthlad.vercel.app/",
-      repoUrl: "https://github.com/Parthlad1/my-portfolio"
+      title: "Object Factory & Code Generation Platform",
+      description: "Enterprise development platform for generating reusable application objects, reducing repetitive setup work, and improving consistency across backend modules.",
+      technologies: ["Java", "Spring Boot", "REST APIs", "PostgreSQL", "Maven"],
     },
     {
       id: 2,
-      title: "Netflix Data Analysis",
-      description: "A data analysis project exploring Netflix viewing trends and patterns using Python and data visualization tools.",
-      image: "/images/Netflix Dashboard.png",
-      technologies: ["Python", "Pandas", "Numpy", "Matplotlib", "Seaborn", "Tableau"],
-      liveUrl: "https://lnkd.in/esSqr6Ya",
-      repoUrl: "https://github.com/Parthlad1/netflix-data-analysis"
+      title: "Authentication Service (TTC Platform)",
+      description: "Authentication-focused backend service for secure user access, API protection, and role-based application workflows within the TTC platform.",
+      technologies: ["Java", "Spring Boot", "Spring Security", "REST APIs", "PostgreSQL"],
+    },
+    {
+      id: 3,
+      title: "Ohioans Medicaid Portal Automation",
+      description: "Healthcare automation workflow for Medicaid portal processes, designed to improve reliability, reduce manual effort, and support eligibility-related operations.",
+      technologies: ["AutomationEdge", "Process Studio", "Healthcare Automation", "Testing", "Workflow Debugging"],
     },
   ];
 
@@ -43,22 +43,26 @@ function Project() {
 
   return (
     <section id="projects" className="projects-section">
-      <h2>My Projects</h2>
+      <h2>Professional Projects</h2>
       <div className="projects-grid">
         {projects.map((project) => (
           <div key={project.id} className="project-card">
-            <img src={project.image} alt={project.title} className="project-image" />
+            {project.image && (
+              <img src={project.image} alt={project.title} className="project-image" loading="lazy" />
+            )}
             <h3 className="project-title">{project.title}</h3>
             <p className="project-description">{project.description}</p>
             <p className="project-tech">{project.technologies.join(", ")}</p>
-            <div className="project-links">
-              {project.liveUrl && (
-                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">Live</a>
-              )}
-              {project.repoUrl && (
-                <a href={project.repoUrl} target="_blank" rel="noopener noreferrer">Code</a>
-              )}
-            </div>
+            {(project.liveUrl || project.repoUrl) && (
+              <div className="project-links">
+                {project.liveUrl && (
+                  <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">Live</a>
+                )}
+                {project.repoUrl && (
+                  <a href={project.repoUrl} target="_blank" rel="noopener noreferrer">Code</a>
+                )}
+              </div>
+            )}
           </div>
         ))}
       </div>

@@ -1,69 +1,28 @@
 import { useState } from 'react';
 import './Navbar.css';
-import { GiHamburgerMenu } from "react-icons/gi";
-import { IoClose } from "react-icons/io5";
-import { FaSun, FaMoon } from "react-icons/fa";
+import { FiMenu, FiX, FiMoon, FiSun } from 'react-icons/fi';
 
 function Navbar({ toggleTheme, theme }) {
-  const [menuState, setMenuState] = useState(""); // "open" | "close" | ""
+  const [isOpen, setIsOpen] = useState(false);
+  const links = ['About', 'Skills', 'Experience', 'Projects', 'Contact'];
 
-  const toggleMenu = () => {
-    if (menuState === "open") {
-      setMenuState("close");   // start closing animation
-    } else {
-      setMenuState("open");    // start opening animation
-    }
-  };
-
-  const closeMenu = () => {
-    setMenuState("close");
-  };
+  const closeMenu = () => setIsOpen(false);
 
   return (
-    <nav className="navbar">
-      <div className="logo">Parth Lad</div>
-
-      {/* Desktop Menu */}
+    <nav className="navbar" aria-label="Primary navigation">
+      <a className="logo" href="#home" onClick={closeMenu}>Parth<span>.</span></a>
       <ul className="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li>
-          <button className={`theme-toggle ${theme}`} onClick={toggleTheme}>
-            <span className="toggle-circle">{theme === "light" ? 
-              <FaMoon size={12} color='black'/> : <FaSun size={12}/>}</span>
-          </button>
-        </li>
-
+        {links.map((link) => <li key={link}><a href={`#${link.toLowerCase()}`}>{link}</a></li>)}
+        <li><button className="theme-toggle" onClick={toggleTheme} aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}>
+          {theme === 'dark' ? <FiSun /> : <FiMoon />}
+        </button></li>
       </ul>
-
-      {/* Mobile Sliding Menu */}
-      <ul className={`nav-link-mobile ${menuState}`}>
-        <li><a href="#home" onClick={closeMenu}>Home</a></li>
-        <li><a href="#about" onClick={closeMenu}>About</a></li>
-        <li><a href="#skills" onClick={closeMenu}>Skills</a></li>
-        <li><a href="#experience" onClick={closeMenu}>Experience</a></li>
-        <li><a href="#projects" onClick={closeMenu}>Projects</a></li>
-        <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
-        <li>
-          <button className={`theme-toggle ${theme}`} onClick={toggleTheme}>
-            <span className="toggle-circle">{theme === "light" ? 
-              <FaMoon size={12} color='black'/> : <FaSun size={12}/>}</span>
-          </button>
-        </li>
-      </ul>
-
-      {/* Hamburger Button */}
-      <div className="ham-menu">
-        <button onClick={toggleMenu}>
-          {menuState === "open"
-            ? <IoClose size={30} color={theme === "light" ? "#151515" : "#E0E0E0"} />
-            : <GiHamburgerMenu size={25} color={theme === "light" ? "#151515" : "#E0E0E0"} />
-          }
-        </button>
+      <button className="menu-button" onClick={() => setIsOpen(!isOpen)} aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={isOpen}>
+        {isOpen ? <FiX /> : <FiMenu />}
+      </button>
+      <div className={`mobile-menu ${isOpen ? 'open' : ''}`}>
+        {links.map((link) => <a key={link} href={`#${link.toLowerCase()}`} onClick={closeMenu}>{link}</a>)}
+        <button className="mobile-theme" onClick={toggleTheme}>{theme === 'dark' ? 'Use light theme' : 'Use dark theme'}</button>
       </div>
     </nav>
   );

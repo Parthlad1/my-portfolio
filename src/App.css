@@ -1,59 +1,70 @@
-* {
-  margin: 0;
-  padding: 0;
+.app {
+  --bg: #090b10;
+  --bg-elevated: #10141d;
+  --surface: rgba(18, 23, 34, 0.78);
+  --surface-solid: #121722;
+  --surface-hover: #171e2c;
+  --line: rgba(190, 208, 230, 0.13);
+  --line-strong: rgba(103, 232, 249, 0.32);
+  --text: #f4f7fb;
+  --muted: #a4b0c2;
+  --subtle: #718096;
+  --accent: #67e8f9;
+  --accent-strong: #22d3ee;
+  --accent-ink: #061218;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow: clip;
 }
 
-/* 🌞 LIGHT MODE VARIABLES */
-:root {
-  --navbar: #ffffff;
-  --home-bg1: #F5F5F5;
-  --home-bg2: #EAEAEA;
-  --project-card: #F5F5F5;
-  --contact-typing:#1E1E1E;
-  --navbar-btn:black;
-  --experience-timeline:#111111;
+.app.dark { color-scheme: dark; }
 
-  --text-main: #000000;
-  --text-heading: #111111;
-  --text-subheading: #444444;
-  --text-paragraph: #555555;
-}
-
-/* 🌙 DARK MODE VARIABLES */
-.app.dark {
-  --navbar: #0a0a0a;
-  --home-bg1: #0f0f0f;
-  --home-bg2: #121212;
-  --project-card: #1e1e1e;
-  --contact-typing:#e0e0e0;
-  --navbar-btn:transparent;
-  --experience-timeline:#4a91e2a9;
-
-
-  --text-main: #ffffff;
-  --text-heading: #ffffff;
-  --text-subheading: #aaaaaa;
-  --text-paragraph: #cccccc;
+.app:not(.dark) {
+  --bg: #f8fafc;
+  --bg-elevated: #eef3f8;
+  --surface: rgba(255, 255, 255, 0.78);
+  --surface-solid: #ffffff;
+  --surface-hover: #f2f8fb;
+  --line: rgba(15, 23, 42, 0.13);
+  --line-strong: rgba(8, 145, 178, 0.35);
+  --text: #0f172a;
+  --muted: #4b5563;
+  --subtle: #64748b;
+  --accent: #0891b2;
+  --accent-strong: #0e7490;
+  --accent-ink: #ffffff;
 }
 
-.navbar{
-  transition: background-color 0.5s ease, color 0.5s ease;
+.section-shell {
+  width: min(1120px, calc(100% - 48px));
+  margin: 0 auto;
 }
-#home {
-  transition: background-color 0.5s ease, color 0.5s ease;
+
+.section-kicker {
+  color: var(--accent);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
-.about{
-  transition: background-color 0.5s ease, color 0.5s ease;
+
+.section-heading {
+  margin: 0.7rem 0 0;
+  font-size: clamp(2rem, 4vw, 3.35rem);
+  letter-spacing: 0;
+  line-height: 1.1;
 }
-.skills-section{
-  transition: background-color 0.5s ease, color 0.5s ease;
+
+.section-intro {
+  max-width: 620px;
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.7;
 }
-.section{
-  transition: background-color 0.5s ease, color 0.5s ease;
-}
-.projects-section{
-  transition: background-color 0.5s ease, color 0.5s ease;
-}
-.contact-section{
-  transition: background-color 0.5s ease, color 0.5s ease;
+
+@media (max-width: 560px) {
+  .section-shell { width: min(100% - 32px, 1120px); }
 }

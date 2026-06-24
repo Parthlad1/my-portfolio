@@ -1,98 +1,27 @@
-import React, { useState } from "react";
-import { motion as Motion } from "framer-motion";
-import "./Contact.css";
-import { FaEnvelope, FaLinkedin } from "react-icons/fa";
-import { FaPhone } from "react-icons/fa6";
+import { useState } from 'react';
+import { motion as Motion } from 'framer-motion';
+import './Contact.css';
+import { FiArrowUpRight, FiGithub, FiLinkedin, FiMail, FiPhone } from 'react-icons/fi';
 
 function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const [status, setStatus] = useState("");
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [status, setStatus] = useState('');
   const [loading, setLoading] = useState(false);
-
-  const BACKEND_URL = "https://portfolio-backend-xzdm.onrender.com/contact";
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setStatus("");
-
+  const handleChange = (event) => setFormData({ ...formData, [event.target.name]: event.target.value });
+  const handleSubmit = async (event) => {
+    event.preventDefault(); setLoading(true); setStatus('');
     try {
-      const res = await fetch(BACKEND_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await res.json();
-
-      if (res.ok) {
-        setStatus("Message sent successfully!");
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        setStatus(data.message || "Failed to send message.");
-      }
-    } catch (err) {
-      console.error(err);
-      setStatus("Something went wrong. Please try again.");
-    }
-
+      const response = await fetch('https://portfolio-backend-xzdm.onrender.com/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(formData) });
+      const data = await response.json();
+      if (response.ok) { setStatus('Message sent successfully.'); setFormData({ name: '', email: '', message: '' }); } else setStatus(data.message || 'Unable to send your message.');
+    } catch (error) { console.error(error); setStatus('Something went wrong. Please try again.'); }
     setLoading(false);
   };
-
   return (
-    <section id="contact" className="contact-section">
-      <Motion.h2 initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }} viewport={{ once: true }}>
-        Contact Me
-      </Motion.h2>
-
-      <Motion.p className="contact-subtitle" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.2, duration: 0.6 }} viewport={{ once: true }}>
-        Feel free to reach out for backend development, Java projects, or software opportunities.
-      </Motion.p>
-
-      <Motion.form onSubmit={handleSubmit} className="contact-form" initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} viewport={{ once: true }}>
-
-        <input type="text" name="name" placeholder="Your Name" aria-label="Your Name" value={formData.name}
-          onChange={handleChange} required />
-
-        <input type="email" name="email" placeholder="Your Email" aria-label="Your Email" value={formData.email}
-          onChange={handleChange} required />
-
-        <textarea name="message" placeholder="Your Message" aria-label="Your Message" value={formData.message}
-          onChange={handleChange} required />
-
-        <Motion.button type="submit" disabled={loading} whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}>
-          {loading ? "Sending..." : "Send Message"}
-        </Motion.button>
-      </Motion.form>
-
-      {status && (
-        <Motion.p className="status-message" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-          {status}
-        </Motion.p>
-      )}
-
-      <Motion.div className="contact-info" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }} viewport={{ once: true }}>
-        <a href="mailto:parthlad153@gmail.com" className="icon-email" aria-label="Email Parth Lad"><FaEnvelope /></a>
-        <a href="tel:+918446723980" className="icon-phone" aria-label="Call Parth Lad"><FaPhone /></a>
-        <a href="https://www.linkedin.com/in/parth-lad153" target="_blank" rel="noopener noreferrer"
-          className="icon-linkedin" aria-label="Visit Parth Lad on LinkedIn"><FaLinkedin /></a>
-      </Motion.div>
-    </section>
+    <section id="contact" className="contact-section"><div className="section-shell contact-layout">
+      <Motion.div initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.5 }}><p className="section-kicker">05 / Contact</p><h2 className="section-heading">Let&apos;s build something dependable.</h2><p className="section-intro">Have a Java, backend, or software engineering opportunity in mind? I&apos;d be glad to hear about it.</p><div className="contact-links"><a href="mailto:parthlad153@gmail.com"><FiMail /> Email me</a><a href="tel:+918446723980"><FiPhone /> Call me</a><a href="https://www.linkedin.com/in/parth-lad153" target="_blank" rel="noopener noreferrer"><FiLinkedin /> LinkedIn <FiArrowUpRight /></a><a href="https://github.com/Parthlad1" target="_blank" rel="noopener noreferrer"><FiGithub /> GitHub <FiArrowUpRight /></a></div></Motion.div>
+      <Motion.form onSubmit={handleSubmit} className="contact-form" initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.5, delay: 0.08 }}><label>Name<input type="text" name="name" value={formData.name} onChange={handleChange} required /></label><label>Email<input type="email" name="email" value={formData.email} onChange={handleChange} required /></label><label>Message<textarea name="message" value={formData.message} onChange={handleChange} required /></label><button type="submit" disabled={loading}>{loading ? 'Sending...' : 'Send message'} <FiArrowUpRight /></button>{status && <p className="status-message" role="status">{status}</p>}</Motion.form>
+    </div></section>
   );
 }
-
 export default Contact;

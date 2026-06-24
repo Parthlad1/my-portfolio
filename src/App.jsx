@@ -9,8 +9,7 @@ import Project from './sections/Project.jsx'
 import Contact from './sections/Contact.jsx'
 
 function App() {
-    // Load saved theme OR default to "light"
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
 
   // Toggle ONLY Home section theme
   const toggleTheme = () => {

@@ -29,8 +29,8 @@ function Home() {
           <Motion.div className="home-buttons" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.4 }}>
             <a href="/Parth_Lad_Java_Developer_Resume.pdf" download className="button button-primary">Resume <FiArrowDownRight /></a>
             <a href="#contact" className="button button-secondary">Contact <FiMail /></a>
-            <a href="https://www.linkedin.com/in/parth-lad153" target="_blank" rel="noopener noreferrer" className="button button-icon" aria-label="Visit Parth Lad on LinkedIn"><FiLinkedin /></a>
-            <a href="https://github.com/Parthlad1" target="_blank" rel="noopener noreferrer" className="button button-icon" aria-label="Visit Parth Lad on GitHub"><FiGithub /></a>
+            <a href="https://www.linkedin.com/in/parth-lad153" target="_blank" rel="me noopener noreferrer" className="button button-icon" aria-label="Visit Parth Lad on LinkedIn"><FiLinkedin /></a>
+            <a href="https://github.com/Parthlad1" target="_blank" rel="me noopener noreferrer" className="button button-icon" aria-label="Visit Parth Lad on GitHub"><FiGithub /></a>
           </Motion.div>
         </div>
         <Motion.div className="hero-portrait-wrap" initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.18 }}>

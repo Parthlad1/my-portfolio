@@ -3,10 +3,66 @@ import { FiArrowUpRight, FiGithub } from 'react-icons/fi';
 import './Project.css';
 
 const projects = [
-  { title: 'Object Factory & Code Generation Platform', description: 'An enterprise development platform for generating reusable application objects and reducing repetitive setup across backend modules.', technologies: ['Java', 'Spring Boot', 'REST APIs', 'PostgreSQL', 'Maven'], type: 'Professional Project', mark: '01' },
-  { title: 'Authentication Service (TTC Platform)', description: 'A security-focused backend service designed around protected user access, API security, and role-based application workflows.', technologies: ['Java', 'Spring Boot', 'Spring Security', 'REST APIs', 'PostgreSQL'], type: 'Professional Project', mark: '02' },
-  { title: 'Ohioans Medicaid Portal Automation', description: 'A healthcare workflow automation initiative supporting reliable eligibility-related portal operations while reducing manual effort.', technologies: ['AutomationEdge', 'Process Studio', 'Healthcare', 'Testing'], type: 'Professional Project', mark: '03' },
-  { title: 'Portfolio Website', description: 'The responsive portfolio you are viewing, designed to communicate backend engineering focus, professional experience, and project work clearly.', technologies: ['React', 'Vite', 'Framer Motion', 'CSS'], type: 'Personal Project', mark: '04', sourceUrl: 'https://github.com/Parthlad1' },
+  {
+    title: 'Object Factory & Code Generation Platform',
+    description:
+      'An enterprise development platform for generating reusable application objects and reducing repetitive setup across backend modules.',
+    technologies: ['Java', 'Spring Boot', 'REST APIs', 'PostgreSQL', 'Gradle'],
+    type: 'Professional Project',
+    mark: '01',
+  },
+  {
+    title: 'Authentication Service (TTC Platform)',
+    description:
+      'A security-focused backend service designed around protected user access, API security, and role-based application workflows.',
+    technologies: ['Java', 'Spring Boot', 'Spring Security', 'REST APIs', 'PostgreSQL'],
+    type: 'Professional Project',
+    mark: '02',
+  },
+  {
+    title: 'Ohioans Medicaid Portal Automation',
+    description:
+      'A healthcare workflow automation initiative supporting reliable eligibility-related portal operations while reducing manual effort.',
+    technologies: ['AutomationEdge', 'Process Studio', 'Healthcare', 'Testing'],
+    type: 'Professional Project',
+    mark: '03',
+  },
+  {
+    title: 'Portfolio Website',
+    description:
+      'The responsive portfolio you are viewing, designed to communicate backend engineering focus, professional experience, and project work clearly.',
+    technologies: ['React', 'Vite', 'Framer Motion', 'CSS'],
+    type: 'Personal Project',
+    mark: '04',
+    sourceUrl: 'https://github.com/Parthlad1',
+    sourceLabel: 'GitHub',
+  },
+  {
+    title: 'Vedbhoomi Website',
+    description:
+      'A modern and responsive website developed for Vedbhoomi, focused on delivering a clean user experience and presenting the organization’s digital presence effectively.',
+    technologies: [
+      'React',
+      'JavaScript',
+      'Tailwind CSS',
+      'Framer Motion',
+      'Responsive Design',
+    ],
+    type: 'Professional Project',
+    mark: '05',
+    sourceUrl: 'https://www.vedbhoomi.com/',
+    sourceLabel: 'Visit website',
+  },
+  {
+    title: 'Aum Labs Website',
+    description:
+      'A modern company website developed for Aum Labs to showcase its services, capabilities, and technology solutions through a responsive and engaging digital experience.',
+    technologies: ['React', 'Tailwind CSS', 'Responsive Design'],
+    type: 'Professional Project',
+    mark: '06',
+    sourceUrl: 'https://www.aum-labs.com/',
+    sourceLabel: 'Visit website',
+  },
 ];
 
 function Project() {
@@ -18,7 +74,24 @@ function Project() {
         </Motion.div>
         <div className="projects-grid">{projects.map((project, index) => <Motion.article key={project.title} className="project-card" initial={{ opacity: 0, y: 25 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.12 }} transition={{ duration: 0.45, delay: index * 0.07 }}>
           <div className="project-topline"><span className="project-number">{project.mark}</span><span className="project-type">{project.type}</span></div><h3>{project.title}</h3><p className="project-description">{project.description}</p><div className="project-tech">{project.technologies.map((technology) => <span key={technology}>{technology}</span>)}</div>
-          <div className="project-actions"><a href="#contact">Discuss project <FiArrowUpRight /></a>{project.sourceUrl && <a href={project.sourceUrl} target="_blank" rel="noopener noreferrer" aria-label="View Parth Lad's GitHub profile"><FiGithub /> Source</a>}</div>
+          <div className="project-actions">
+            <a href="#contact">
+              Discuss project <FiArrowUpRight />
+            </a>
+
+            {project.sourceUrl && (
+              <a
+                href={project.sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Visit ${project.title}`}
+              >
+                {project.sourceLabel === 'GitHub' && <FiGithub />}
+                {project.sourceLabel}
+                {project.sourceLabel !== 'GitHub' && <FiArrowUpRight />}
+              </a>
+            )}
+          </div>
         </Motion.article>)}</div>
       </div>
     </section>
